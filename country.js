@@ -1,9 +1,10 @@
 class Country {
-    constructor(name, lang, greeting, colors) {
+    constructor(name, lang, greeting, colors, image) {
         this.name = name;
         this.lang = lang;
         this.greeting = greeting;
         this.colors = colors;
+        this.image = image;
     }
 
     DisplayColors(){
@@ -19,6 +20,8 @@ class Country {
         countryLanguageNode.innerText = this.lang;
         let greetingNode = document.querySelector("#HelloWorld");
         greetingNode.innerText = this.greeting;
+        let imgNode = document.querySelector("#dog");
+        imgNode.setAttribute("src", this.image);
         //document.querySelector("body").style.backgroundColor = this.colors[0];
     }
 
@@ -29,9 +32,9 @@ class Country {
     // }
 
 }
-let usa = new Country("USA", "Murican", "Why Hello there world! Have some McDonalds", ["red", "white", "blue"]);
-let mexico = new Country("Mexico", "Spanish", "Hola mundo!", ["red", "white", "green"]);
-let algeria = new Country("Algeria", "Arabic and Berber", "Sup", ["blue", "yellow", "red"]);
+let usa = new Country("USA", "Murican", "Why Hello there world! Have some McDonalds", ["red", "white", "blue"], "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQS3dAU92J60zkP2-HS5sC42rhZA8msV2vyQ&usqp=CAU");
+let mexico = new Country("Mexico", "Spanish", "Hola mundo!", ["red", "white", "green"], "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfYlehcYS8GcAVcdQ7CxXzJcEbaySRcUmx7w&usqp=CAU");
+let algeria = new Country("Algeria", "Arabic and Berber", "Sup", ["blue", "yellow", "red"], "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK-dUDi6iP1tTEaNutufQjltUKuzZ2RyUung&usqp=CAU");
 
 
 function SwitchCountry() {
